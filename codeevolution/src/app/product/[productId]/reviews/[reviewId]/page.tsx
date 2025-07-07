@@ -4,12 +4,12 @@ import React from 'react'
 
 async function page({params, }: {params: Promise<{productId: string, reviewId: string}>}) {
     const {productId, reviewId} =  await params;
-    console.log(productId, reviewId);
+    // console.log(productId, reviewId);
     
     if(parseInt(reviewId) > 1000) {
         console.log("error");
         
-        notFound();
+        notFound(); //it route to the notFound page when condition are tr
     }
   return (
     <div>
