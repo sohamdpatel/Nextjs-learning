@@ -1,15 +1,14 @@
-import React from 'react'
-
 export const metadata = {
-    title: 'Blog',
-}
+  title: 'Blog',
+};
 
-function page() {
+export default async function Page() {
+  // Simulate server-side delay
+  await new Promise((resolve) => setTimeout(resolve, 2000));
+
   return (
     <div>
-      My blog page
+      <h1>My Blog Page</h1>
     </div>
-  )
+  );
 }
-
-export default page

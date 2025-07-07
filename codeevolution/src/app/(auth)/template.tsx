@@ -17,6 +17,7 @@ export default function AuthLayout({
 }) {
   const pathname = usePathname();
   const [hasMounted, setHasMounted] = useState(false);
+  const [input, setInput] = useState("") // when we are using layout file that time we change the route that time state doesn't change but when we use template filethat time every time when we change the page that make a new instance
 
   useEffect(() => {
     setHasMounted(true);
@@ -33,6 +34,7 @@ export default function AuthLayout({
 
   return (
     <div className=" h-screen">
+      <input type="text" onChange={(e) => setInput(e.target.validationMessage)} />
       <div className="flex gap-2">
         {navLink.map((link) => {
           const isActive =
