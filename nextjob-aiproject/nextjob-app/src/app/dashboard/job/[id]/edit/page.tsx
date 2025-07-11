@@ -22,8 +22,9 @@ export default async function EditJobPage({ params }:{ params: Promise<{ id: str
   await connectDB()
   const { id } = await params
 
+console.log('EditJobPage id:', id)
   const job = (await Job.findById(id).lean()) as JobType | null
-
+console.log('EditJobPage job:', job)
   if (!job) return notFound()
 
   return (

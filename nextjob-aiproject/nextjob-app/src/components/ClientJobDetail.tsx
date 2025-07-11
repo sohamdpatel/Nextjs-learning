@@ -27,7 +27,7 @@ export default function ClientJobDetail({ job }: { job: any }) {
         <h1 className="text-3xl font-bold">{job.title}</h1>
         <div className="flex gap-4">
           <Link
-            href={`/dashboard/job/${job.id}/edit`}
+            href={`/dashboard/job/${job._id}/edit`}
             className="text-sm text-blue-600 underline"
           >
             Edit
