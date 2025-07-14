@@ -18,6 +18,15 @@ export default function Home() {
           />
           <h2 className=" text-xl font-bold"> Routing Photo Feed </h2>
         </Link>
+        <Link
+          href={"/authentication-clerk"}
+          className="flex flex-col items-center bg-blue-500 text-white p-4 rounded-lg shadow-lg hover:bg-blue-600 transition-colors"
+        >
+          <div
+            className="mx-auto rounded-lg shadow-lg w-96 mb-4 h-1/2"
+          ></div>
+          <h2 className=" text-xl font-bold"> Authentication clerk App</h2>
+        </Link>
       </div>
     </div>
   );
