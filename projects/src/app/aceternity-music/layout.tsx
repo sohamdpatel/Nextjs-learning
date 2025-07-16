@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import { Navigation } from "@/components/authappcomponents/navigation";
+import Navbar from "@/components/acenternityUi/Navbar"
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Authentication Clerk App",
-  description: "This is the authentication clerk page for managing user authentication.",
+  title: "Aceternity-Ui Music Courses App",
+  description: "This is the Aceternity-Ui Music Courses application layout.",
 };
 
 export default function RootLayout({
@@ -23,10 +23,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-        <div>
-        <Navigation/>
+        <>
+            <div className=" relative flex items-center justify-between w-full shadow-md">
+                <Navbar />
+            </div>
         {children}
-        </div>
+        </>
 
   );
 }

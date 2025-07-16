@@ -1,0 +1,104 @@
+{
+  "courses": [
+    {
+      "id": 1,
+      "title": "Guitar Fundamentals",
+      "slug": "guitar-fundamentals",
+      "description": "Learn the basics of playing guitar with our comprehensive beginner's course.",
+      "price": 99.99,
+      "instructor": "John Doe",
+      "isFeatured": true,
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTcLKWSxSHu6O5YioS6gX_rF46rWM_fJ27QWw&s"
+    },
+    {
+      "id": 2,
+      "title": "Piano for Beginners",
+      "slug": "piano-for-beginners",
+      "description": "Start your piano journey with essential techniques and basic music theory.",
+      "price": 129.99,
+      "instructor": "Jane Smith",
+      "isFeatured": false,
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQbBi5sQkfxB4beIVvOZi5zGgUjyNuF5uK08Q&s"
+    },
+    {
+      "id": 3,
+      "title": "Drumming Basics",
+      "slug": "drumming-basics",
+      "description": "Master fundamental drumming rhythms and techniques for all levels.",
+      "price": 89.99,
+      "instructor": "Mike Johnson",
+      "isFeatured": true,
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTf9eoMY5uSliJQICdHI2JxpeFN5igP60cbtg&s"
+    },
+    {
+      "id": 4,
+      "title": "Vocal Training: Pop & Rock",
+      "slug": "vocal-training-pop-rock",
+      "description": "Develop powerful vocal skills and sing your favorite pop and rock hits.",
+      "price": 119.99,
+      "instructor": "Sarah Davis",
+      "isFeatured": false,
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTf9eoMY5uSliJQICdHI2JxpeFN5igP60cbtg&s"
+    },
+    {
+      "id": 5,
+      "title": "Music Production in Ableton Live",
+      "slug": "music-production-ableton",
+      "description": "Learn to produce professional-quality music using Ableton Live.",
+      "price": 199.99,
+      "instructor": "David Wilson",
+      "isFeatured": true,
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTf9eoMY5uSliJQICdHI2JxpeFN5igP60cbtg&s"
+    },
+    {
+      "id": 6,
+      "title": "Jazz Improvisation for All Instruments",
+      "slug": "jazz-improvisation",
+      "description": "Explore the art of jazz improvisation and enhance your musicality.",
+      "price": 149.99,
+      "instructor": "Emily Brown",
+      "isFeatured": false,
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTf9eoMY5uSliJQICdHI2JxpeFN5igP60cbtg&s"
+    },
+    {
+      "id": 7,
+      "title": "Classical Violin Techniques",
+      "slug": "classical-violin",
+      "description": "Dive into classical violin playing with expert guidance and exercises.",
+      "price": 139.99,
+      "instructor": "Daniel White",
+      "isFeatured": true,
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTf9eoMY5uSliJQICdHI2JxpeFN5igP60cbtg&s"
+    },
+    {
+      "id": 8,
+      "title": "Ukulele for Fun",
+      "slug": "ukulele-for-fun",
+      "description": "A cheerful course to learn basic ukulele chords and songs for enjoyment.",
+      "price": 79.99,
+      "instructor": "Olivia Green",
+      "isFeatured": false,
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTf9eoMY5uSliJQICdHI2JxpeFN5igP60cbtg&s"
+    },
+    {
+      "id": 9,
+      "title": "Songwriting Essentials",
+      "slug": "songwriting-essentials",
+      "description": "Unlock your creativity and learn the fundamentals of crafting compelling songs.",
+      "price": 109.99,
+      "instructor": "Chris Taylor",
+      "isFeatured": true,
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTf9eoMY5uSliJQICdHI2JxpeFN5igP60cbtg&s"
+    },
+    {
+      "id": 10,
+      "title": "Electronic Music Theory",
+      "slug": "electronic-music-theory",
+      "description": "Understand the theoretical concepts behind electronic music production.",
+      "price": 99.99,
+      "instructor": "Sophia Martinez",
+      "isFeatured": false,
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTf9eoMY5uSliJQICdHI2JxpeFN5igP60cbtg&s"
+    }
+  ]
+}
