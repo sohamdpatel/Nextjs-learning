@@ -15,7 +15,8 @@ export async function POST(request: NextRequest){
             message: "User data retrieved successfully",
             data: user
         })
-    } catch (error) {
+    } catch (error: any) {
+        console.log("Internal server error", error.message);
         
     }
 }

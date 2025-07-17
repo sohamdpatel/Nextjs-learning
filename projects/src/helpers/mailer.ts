@@ -11,9 +11,9 @@ export const sendEmail = async ({email, emailType, userId}:
         const hasedToken = await bcrypt.hash(userId.toString(), 10); // Hash the userId for security
 
         if (emailType === "VERIFY") {
-            await User.findByIdAndUpdate(userId, {verifyToken: hasedToken, verifyTokenExpiry: Date.now() + 3600000}); 
+            await User.findByIdAndUpdate(userId, {$set: {verifyToken: hasedToken, verifyTokenExpiry: Date.now() + 3600000}}); 
         } else if (emailType === "RESET") {
-            await User.findByIdAndUpdate(userId, {resetToken: hasedToken, resetTokenExpiry: Date.now() + 3600000});
+            await User.findByIdAndUpdate(userId, {$set: {resetToken: hasedToken, resetTokenExpiry: Date.now() + 3600000}});
         }
 // 0ee25a4bc88edea2d39196533db81aa1
         // Looking to send emails in production? Check out our Email API/SMTP product!
@@ -34,7 +34,7 @@ var transport = nodemailer.createTransport({
             subject: emailType === "VERIFY" ? "Verify your email" : "Reset your password", // Subject line
             text: `Hello, your user ID is ${userId}. Welcome to our platform!`, // plain text body
             html: `<p>Click <a href="${process.env.DOMAIN}/nextauth-verification/verifyemail?token=${hasedToken}">here</a> to ${emailType === "VERIFY" ? "verify your email" : "reset your password"}
-            or copy and paste the link below in your browser. <br> ${process.env.DOMAIN}/verifyemail?token=${hasedToken}
+            or copy and paste the link below in your browser. <br> ${process.env.DOMAIN}/nextauth-verification/verifyemail?token=${hasedToken}
             </p>`, // html body
         };
 

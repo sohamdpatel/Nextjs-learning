@@ -36,11 +36,13 @@ export async function POST(request: NextRequest) {
 
         const response = NextResponse.json({message: "Login successful",success:true}, {status: 200});
 
-        return  response.cookies.set("token", token, {
+        response.cookies.set("token", token, {
             httpOnly: true,
             sameSite: "strict",
             maxAge: 24 * 60 * 60 // 1 day
         });
+
+        return response
     } catch (error) {
         console.error("Login error:", error);
         return NextResponse.json({error: "Internal server error"}, {status: 500});

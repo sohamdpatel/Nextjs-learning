@@ -13,8 +13,8 @@ export async function POST(request: NextRequest) {
             return NextResponse.json({ error: "Token is required" }, { status: 400 });
         }
 
-        const user = await User.findOne({                                        verificationToken: token,
-            verificationTokenExpires: { $gt: new Date() } // Check if token is still valid
+        const user = await User.findOne({verifyToken: token,
+            verifyTokenExpiry: { $gt: new Date() } // Check if token is still valid
          });
 
         if (!user) {
@@ -23,8 +23,8 @@ export async function POST(request: NextRequest) {
 
         // Update user to mark email as verified
         user.isVerified = true;
-        user.verificationToken = undefined; // Clear the token
-        user.verificationTokenExpires = undefined; // Clear the expiry
+        user.verifyToken = undefined; // Clear the token
+        user.verifyTokenExpiry = undefined; // Clear the expiry
         await user.save();
         console.log("User email verified successfully:", user.email);
         return NextResponse.json({ message: "Email verified successfully",success: true }, { status: 200 });
