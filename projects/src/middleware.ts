@@ -62,7 +62,7 @@ export default clerkMiddleware(async (auth, req) => {
 
     if (!isPublic && !path.startsWith(`/nextauth-verification/api`)) {
 
-      if (!token) {
+      if (!token && !path.match('/nextauth-verification')) {
         return NextResponse.redirect(
           new URL("/nextauth-verification/login", req.url)
         );
