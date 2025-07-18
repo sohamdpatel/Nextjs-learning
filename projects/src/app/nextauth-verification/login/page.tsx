@@ -23,8 +23,11 @@ export default function LoginPage() {
     const onLogin = async () => {
         try {
             setLoading(true);
+            setButtonDisabled(true)
+            console.log("clicked");
+            
             const response = await axios.post("/nextauth-verification/api/users/login", user);
-            console.log("Login success", response.data);
+            console.log("Login success", response);
             toast.success("Login success");
             router.push("/nextauth-verification/profile");
         } catch (error:any) {
@@ -32,6 +35,7 @@ export default function LoginPage() {
             toast.error(error.message);
         } finally{
         setLoading(false);
+        setButtonDisabled(false)
         }
     }
 
@@ -68,6 +72,7 @@ export default function LoginPage() {
             />
             <button
             onClick={onLogin}
+            disabled={buttonDisabled}
             className="p-2 border border-gray-300 rounded-lg mb-4 focus:outline-none focus:border-gray-600">Login here</button>
             <Link href="/nextauth-verification/signup">Visit Signup page</Link>
         </div>

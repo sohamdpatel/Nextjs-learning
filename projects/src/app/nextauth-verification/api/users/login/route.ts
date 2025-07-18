@@ -9,6 +9,8 @@ connect();
 export async function POST(request: NextRequest) {
     try {
         const {email, password} = await request.json();
+        console.log("this is from login ", email, password);
+        
 
         if (!email || !password) {
             return NextResponse.json({error: "Email and password are required"}, {status: 400});
@@ -33,6 +35,9 @@ export async function POST(request: NextRequest) {
         };
 
         const token = jwt.sign(tokenData, process.env.TOKEN_SECRET!, {expiresIn: "1d"});
+        
+        
+        console.log("token", token)
 
         const response = NextResponse.json({message: "Login successful",success:true}, {status: 200});
 
