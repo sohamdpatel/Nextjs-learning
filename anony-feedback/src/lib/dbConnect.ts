@@ -13,9 +13,9 @@ export default async function dbConnect () : Promise<void> {
     }
 
     try {
-        const db = await mongoose.connect(process.env.MONGO_URI || "mongodb://localhost:27017/")
-
-        console.log("Database db: ",db);
+        const db = await mongoose.connect(process.env.MONGO_URI || "mongodb://localhost:27017/", {
+      dbName: "anonyfeedback",
+    })
         
         connection.isConnected = db.connections[0].readyState
 
