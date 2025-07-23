@@ -11,9 +11,12 @@ export async function GET(request: Request) {
   await dbConnect();
 
   try {
+    console.log("its run");
+    
     const { searchParams } = new URL(request.url);
     const queryParam = { username: searchParams.get("username") };
-
+    // console.log(queryParam);
+    
     //Validate with zod
     const result = UsernameQuerySchema.safeParse(queryParam);
     console.log("result of usernameschema", result)
@@ -34,7 +37,7 @@ export async function GET(request: Request) {
 
         return Response.json({
             success: true,
-            message: `Username ${username} is available`,
+            message: `Username is unique`,
             }, {
                 status: 200,
         })
