@@ -18,11 +18,15 @@ export const authOptions: NextAuthOptions = {
         const db = await dbConnect();
         try { 
             const { email, password } = credentials;
+            console.log(email, password);
+            
             const user = await UserModel.findOne({ $or: [
                 {email},
                 {username: email}
             ]
          });
+         console.log("user from options", user);
+         
             if (!user) {
               throw new Error("No User found with this credentials");
             }
@@ -41,24 +45,31 @@ export const authOptions: NextAuthOptions = {
     }),
   ],
   callbacks:{
-    async session({session, token}) {
-        if (token) {
-            session.user._id = token.toString()
-            session.user.isVerified = token.isVerified
-            session.user.isAcceptingMessages = token.isAcceptingMessages
-            session.user.username = token.username
-        }
-        return session
+    async jwt({ token, user }) {
+      if (user) {
+        // 'user' here is the object returned from the 'authorize' callback
+        // Now it has 'id', 'email', 'username', etc.
+        token.id = user.id; // Use 'id' from the returned user object
+        token._id = user.id; // Also store as _id for consistency with Mongoose
+        token.isVerified = (user as any).isVerified;
+        // Use the correct property name: 'isAcceptingMessage'
+        token.isAcceptingMessages = (user as any).isAcceptingMessages; 
+        token.username = (user as any).username;
+      }
+      return token;
     },
-    async jwt({token, user}) {
-        if (user) {
-            token._id = user?._id?.toString()
-            token.isVerified = user?.isVerified
-            token.isAcceptingMessages = user?.isAcceptingMessages
-            token.username = user?.username
-        }
-        return token
-    }
+    async session({ session, token }) {
+      if (session.user) {
+        // Assign properties from the token to the session.user object
+        // session.user.id = token.id as string; // Ensure 'id' is also set
+        session.user._id = token._id as string;
+        session.user.isVerified = token.isVerified as boolean;
+        // Use the correct property name: 'isAcceptingMessage'
+        session.user.isAcceptingMessages = token.isAcceptingMessages as boolean;
+        session.user.username = token.username as string;
+      }
+      return session;
+    },
   },
   pages: {
     signIn: '/sign-in',
@@ -66,6 +77,6 @@ export const authOptions: NextAuthOptions = {
   session: {
     strategy: "jwt"
   },
-  secret: process.env.SECRET_KEY,
+  secret: process.env.NEXTAUTH_SECRET,
   
 };

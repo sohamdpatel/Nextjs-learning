@@ -15,7 +15,8 @@ import { Input } from '@/components/ui/input';
 import Link from 'next/link';    
 import { useRouter } from 'next/navigation';
 import { toast } from "sonner"
-import { signInSchema } from '@/schemas/signInSchema';
+import { signInSchema } from '@/schemas/signInSchema'
+import { log } from 'console';
 
 export default function SignInForm() {
     
@@ -23,19 +24,22 @@ export default function SignInForm() {
 
   const form = useForm<z.infer<typeof signInSchema>>({
     resolver: zodResolver(signInSchema),
-    defaultValues: {
+    defaultValues: {  
       identifier: '',
       password: '',
     },
   });
   
   const onSubmit = async (data: z.infer<typeof signInSchema>) => {
+    console.log("daata", data);
+    
     const result = await signIn('credentials', {
       redirect: false,
-      identifier: data.identifier,
+      email: data.identifier,
       password: data.password,
     });
-
+    console.log("result",result);
+    
     if (result?.error) {
       if (result.error === 'CredentialsSignin') {
         // Correct usage for sonner.toast (using .error() for destructive variant)
@@ -47,6 +51,7 @@ export default function SignInForm() {
     }
 
     if (result?.url) {
+      // console.log("in if",router.)
       router.replace('/dashboard');
     }
   };
