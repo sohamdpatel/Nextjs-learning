@@ -1,5 +1,6 @@
 {
     "quokka.automaticRestart": true,
     "quokka.codeClipAutoUpload": true,
-    "quokka.codeAutoPlayDelay": 100
+    "quokka.codeAutoPlayDelay": 100,
+    "git.ignoreLimitWarning": true
 }
