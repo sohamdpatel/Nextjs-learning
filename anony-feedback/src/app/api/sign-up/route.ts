@@ -1,11 +1,9 @@
-import dbConnect from "@/lib/dbConnect";
+import dbConnect from "@/lib/dbConnect"
 import { NextApiRequest } from "next";
 import UserModel from "@/model/user";
 import bcrypt from "bcryptjs";
 
 import { sendVerificationEmail } from "@/helpers/sendVerificationEmail";
-import { success } from "zod";
-import { truncate } from "node:fs/promises";
 
 export async function POST(request: Request) {
     await dbConnect();

@@ -2,7 +2,9 @@ import React from 'react'
 import Card from '../Card'
 import Link from 'next/link'
 
-function Page() {
+async function Page() {
+
+  await new Promise((resolve,reject) => setTimeout(resolve, 20000));
   return (
     <Card>
       Revenue
@@ -11,4 +13,4 @@ function Page() {
   )
 }
 
-export default Page
+export default Page;

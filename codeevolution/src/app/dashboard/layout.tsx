@@ -14,7 +14,7 @@ export default  function AuthLayout({
   users: React.ReactNode,
   login: React.ReactNode
 }) {
-  const isLoggedIn = false; // Replace with actual authentication logic
+  const isLoggedIn = true; // Replace with actual authentication logic
   return isLoggedIn ? (
     <div className=" h-screen">                         
       {children}

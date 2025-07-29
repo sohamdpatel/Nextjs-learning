@@ -18,8 +18,8 @@ async function page({params, }: {params: Promise<{productId: string, reviewId: s
     if(parseInt(reviewId) > 1000) {
         console.log("error");
         
-        // notFound(); //it route to the notFound page when condition are tr
-        redirect("/");
+        notFound(); //it route to the notFound page when condition are tr
+        // redirect("/");
     }
   return (
     <div>
