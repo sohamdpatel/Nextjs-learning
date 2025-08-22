@@ -21,7 +21,6 @@ export default  function AuthLayout({
       <div>{notification}</div>
       <div>{revenue}</div>
       <div>{users}</div>
-      
     </div>
   ) : (
     <div className=" h-screen flex items-center justify-center">

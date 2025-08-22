@@ -29,7 +29,7 @@ export default function VideoUploadForm() {
     defaultValues: {
       title: "",
       description: "",
-      videoUrl: "",
+      videoUrl: "", 
       thumbnailUrl: "",
     },
   });

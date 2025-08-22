@@ -100,7 +100,7 @@ function UserDashboard() {
     }
   };
 
-  if (!session || !session.user) {
+  if (!session || !session?.user) {
     return <div></div>;
   }
 

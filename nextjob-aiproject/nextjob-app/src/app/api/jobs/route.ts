@@ -14,7 +14,7 @@ export async function GET(req: Request) {
     const skip = (page - 1) * limit
 
     let query: any = {}; // Initialize an empty MongoDB query object
-
+ 
     // If a search term is provided, build the search query
     if (searchTerm) {
       query = {

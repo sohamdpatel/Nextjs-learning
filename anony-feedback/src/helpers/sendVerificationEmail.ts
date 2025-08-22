@@ -6,7 +6,7 @@ import { ApiResponse } from "@/types/ApiResponse";
 
 export async function sendVerificationEmail(
     email: string,
-    username: string,
+    username: string,   
     verifyCode: string,
 ): Promise<ApiResponse> {
     try {

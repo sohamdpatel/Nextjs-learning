@@ -3,9 +3,7 @@
 import Link from "next/link";
 import React, { useState } from "react";
 import { useRouter, usePathname } from "next/navigation";
-import { Preahvihear } from "next/font/google";
 import { LuPanelLeftOpen, LuPanelRightOpen } from "react-icons/lu";
-// import { LuPanelRightOpen } from "react-icons/lu";
 
 export default function DashboardLayout({
   children,
@@ -118,7 +116,7 @@ export default function DashboardLayout({
         >
           {siderOpen ? "🔓 Logout" : "🔓"}
         </button>
-      </aside>
+      </aside>                                          
 
       {/* Main Content */}
       <main className="flex-1 p-8 bg-gray-100 h-screen overflow-y-auto">
@@ -127,3 +125,4 @@ export default function DashboardLayout({
     </div>
   );
 }
+  

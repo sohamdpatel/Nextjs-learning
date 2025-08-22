@@ -12,4 +12,5 @@ export default async function JobDetailPage({ params }: { params: Promise<{id: s
   if (!job) return notFound()
 
   return <ClientJobDetail job={JSON.parse(JSON.stringify(job))} />
+  
 }

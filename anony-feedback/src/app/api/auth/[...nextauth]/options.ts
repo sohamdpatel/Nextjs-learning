@@ -44,7 +44,7 @@ export const authOptions: NextAuthOptions = {
       },
     }),
   ],
-  callbacks:{
+  callbacks:{ 
     async jwt({ token, user }) {
       if (user) {
         // 'user' here is the object returned from the 'authorize' callback
@@ -78,5 +78,4 @@ export const authOptions: NextAuthOptions = {
     strategy: "jwt"
   },
   secret: process.env.NEXTAUTH_SECRET,
-  
 };

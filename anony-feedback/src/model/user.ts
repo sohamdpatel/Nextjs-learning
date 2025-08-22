@@ -8,7 +8,7 @@ export interface Message extends Document{
 
 const MessageSchema: Schema<Message> = new Schema({
     content: {
-        type: String,
+        type: String, 
         required: true
     },
     createdAt: {
